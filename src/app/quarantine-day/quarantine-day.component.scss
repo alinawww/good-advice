@@ -1,0 +1,28 @@
+.header-section {
+    text-align: center;
+    padding: 24px;
+}
+.page-wrap {
+    height: 100vh;
+    background: #0D47A1;
+    margin: 0;
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    &__card {
+        padding: 20px;
+        background: #2196F3;
+        flex-basis: 50%;
+        margin: 10px;
+        color: white;
+        border-radius: 4px;
+    }
+}
+
+.tip {
+    background: #03A9F4;
+    padding: 10px;
+    margin: 10px;
+}

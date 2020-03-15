@@ -1,0 +1,22 @@
+<div class="page-wrap">
+  <div class="header-section">
+    <h1>{{segment.title}}</h1>
+    <div>{{time | date: 'hh:mm:ss a' }}</div>
+  </div>
+  
+  <div class="container">
+    <div class="container__card container__card--life">
+      <div class="tip tip--life" *ngFor="let lifeTip of segment.advice.life">
+        {{lifeTip.title}}
+      </div>
+    </div>
+    <div class="container__card container__card--productivity">
+      <div class="tip tip--prod" *ngFor="let prodTip of segment.advice.productivity">
+        {{prodTip}}
+      </div>
+    </div>
+  </div>
+  <div>
+    <!-- <button>Get a random advice</button> -->
+  </div>
+</div>  
