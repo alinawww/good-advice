@@ -17,7 +17,6 @@ export class QuarantineDayComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.segment);
-    
   }
 
   get time() {
@@ -25,8 +24,9 @@ export class QuarantineDayComponent implements OnInit {
   }
 
   get segment() {
-    return this.data
-      .find(section => this.time.getHours() >= section.range[0] && this.time.getHours() < section.range[1]) || this.data[0];
+    return this.data[5];
+    // return this.data
+    //   .find(section => this.time.getHours() >= section.range[0] && this.time.getHours() < section.range[1]) || this.data[0];
   }
 
 }

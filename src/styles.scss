@@ -3,4 +3,8 @@ html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body { margin: 0; font-family: 'Work Sans', sans-serif; }
 
-
+.morning {
+    &-one {
+        background: linear-gradient(to top, #ff5f6d, #ffc371);        
+    }
+}

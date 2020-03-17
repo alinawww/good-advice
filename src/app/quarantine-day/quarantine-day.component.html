@@ -1,22 +1,55 @@
-<div class="page-wrap">
-  <div class="header-section">
-    <h1>{{segment.title}}</h1>
-    <div>{{time | date: 'hh:mm:ss a' }}</div>
-  </div>
-  
-  <div class="container">
-    <div class="container__card container__card--life">
-      <div class="tip tip--life" *ngFor="let lifeTip of segment.advice.life">
-        {{lifeTip.title}}
+<div class="gradient">
+  <div class="sleep"></div>
+  <div class="breakfast"></div>
+  <div class="brunch"></div>
+  <div class="lunch"></div>
+  <div class="snack"></div>
+  <div class="dinner"></div>
+  <div class="chill"></div>
+  <div class="midnight"></div>
+  <div class="sleep"></div>
+</div>
+
+<div [class]="'page-wrap ' + segment.name">
+  <div class="page-content">
+    <div class="header-section">
+      <h1 class="header-section__title">{{segment.title}}</h1>
+      <div class="header-section__time">{{time | date: 'hh:mm:ss a' }}</div>
+      <img class="header-section__illustration" [src]="'/assets/' + segment.image + '.svg'" alt="">
+    </div>
+    
+    <div class="container">
+      <div class="container__card container__card--life">
+        <h2>Life</h2>
+        <div class="tip tip--life" *ngFor="let lifeTip of segment.advice.life">
+          <h3 class="tip__title">{{lifeTip.title}}</h3>
+          <div class="tip__description">
+            {{lifeTip.description}}
+          </div>
+          <div class="tip__links" *ngIf="lifeTip.links && lifeTip.links.length">
+            <a [href]="link.url" *ngFor="let link of lifeTip.links">
+              <img class="icon" src="/assets/link.svg" alt="">
+              {{link.name}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="container__card container__card--productivity">
+        <h2>Productivity</h2>
+        <div class="tip tip--prod" *ngFor="let prodTip of segment.advice.productivity">
+          <h3 class="tip__title">{{prodTip.title}}</h3>
+          <div class="tip__description">
+            {{prodTip.description}}
+          </div>
+          <div class="tip__links" *ngIf="prodTip.links && prodTip.links.length">
+            <a [href]="link.url" *ngFor="let link of prodTip.links">
+              <img class="icon" src="/assets/link.svg" alt="">
+              {{link.name}}</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container__card container__card--productivity">
-      <div class="tip tip--prod" *ngFor="let prodTip of segment.advice.productivity">
-        {{prodTip}}
-      </div>
+    <div>
+      <!-- <button>Get a random advice</button> -->
     </div>
-  </div>
-  <div>
-    <!-- <button>Get a random advice</button> -->
   </div>
 </div>  

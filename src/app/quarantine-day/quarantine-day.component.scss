@@ -1,28 +1,151 @@
+$breakast: #ffc371;
+$brunch: #ff5f6d;
+$lunch: #108dc7;
+$snack: #fbc7d4;
+$dinner: #9796f0;
+$chill: #EFCA08;
+$midnight: #CFDEF3;
+$sleep: #c471ed;
+$insomnia: #f64f59;
+.gradient {
+    height: 100vh;
+    div {
+        height: calc(100vh / 9);
+    }
+}
 .header-section {
     text-align: center;
     padding: 24px;
+
+    &__title {
+        font-size: 66px;
+    }
+
+    &__time {
+        font-size: 24px;
+    }
+
+    &__illustration {
+        margin-top: 30px;
+        // width: 200px;
+        height: 150px;
+    }
 }
+a {
+    color: #fff;
+    font-weight: 500;
+    font-style: inherit;
+    .icon {
+        width: 12px;
+    }
+}
+h2 {
+    font-weight: 600;
+}
+.page-content {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
 .page-wrap {
-    height: 100vh;
-    background: #0D47A1;
+    min-height: 100vh;
+    background-attachment: fixed;
     margin: 0;
-    overflow: hidden;
+    color: #fff;
 }
+
 .container {
     display: flex;
     justify-content: space-between;
+
     &__card {
         padding: 20px;
-        background: #2196F3;
+        // background: transparentize(#fff, .8);
         flex-basis: 50%;
         margin: 10px;
         color: white;
-        border-radius: 4px;
+        // border-radius: 4px;
     }
 }
 
 .tip {
-    background: #03A9F4;
-    padding: 10px;
-    margin: 10px;
+    background: transparentize(#fff, .8);
+    // padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &__title {
+        background: white;
+        margin: 0;
+        font-weight: 400;
+        padding: 20px;
+        padding: 12px 20px;
+    }
+    &__description {
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    &__links {
+        padding: 20px;
+        border-top: 1px solid transparentize(#fff, .6);
+    }
+
+}
+
+.breakfast {
+    background: linear-gradient(to bottom, $breakast, $brunch);
+    .tip__title {
+        color: $breakast;
+    }
+}
+
+.brunch {
+    background: linear-gradient(to bottom, $brunch, $lunch);
+    .tip__title {
+        color: $brunch;
+    }
+}
+
+.lunch {
+    background: linear-gradient(to bottom, $lunch, $snack);
+    .tip__title {
+        color: $lunch;
+    }
+}
+
+.snack {
+    background: linear-gradient(to bottom, $snack, $dinner);
+    .tip__title {
+        color: $snack;
+    }
+}
+
+.dinner {
+    background: linear-gradient(to bottom, $dinner, $chill);
+    .tip__title {
+        color: $dinner;
+    }
+}
+
+.chill {
+    background: linear-gradient(to bottom, $chill, $midnight);
+    .tip__title {
+        color: $chill;
+    }
+}
+
+.midnight {
+    background: linear-gradient(to bottom, $midnight, $sleep);
+    .tip__title {
+        color: $midnight;
+    }
+}
+
+.sleep {
+    background: linear-gradient(to bottom, $sleep, $breakast);
+    .tip__title {
+        color: $sleep;
+    }
 }
