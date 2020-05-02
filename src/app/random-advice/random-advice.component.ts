@@ -15,7 +15,10 @@ export class RandomAdviceComponent implements OnInit, OnDestroy {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.getRandomAdvice();
+    // this.getRandomAdvice();
+    this.apiService.getNfCountries().subscribe(resp => {
+      console.log('resp', resp);
+    });
   }
 
   getRandomAdvice() {
