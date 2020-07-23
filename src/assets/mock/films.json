@@ -1,0 +1,60 @@
+{
+    "elapse": 0.0048,
+    "total": 3,
+    "results": [
+      {
+        "vtype": "movie",
+        "img": "http://occ-0-114-116.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABRrTEjXHbQpA_f6DnUDYguUZSzKSAK4S4_TmV-4-lY7BV4iLbx27CHV12qFBGY_LsSDH2Qv7pgbpWLy2CCnwW1s4XA.jpg?r=f4e",
+        "nfid": 70213466,
+        "imdbid": "tt1702425",
+        "title": "Casa de mi Padre",
+        "clist": "\"US\":\"United States\",\"AR\":\"Argentina\",\"BR\":\"Brazil\",\"MX\":\"Mexico\"",
+        "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BODE1MDYzNjA0NF5BMl5BanBnXkFtZTcwNjY2MTgyNw@@._V1_SX300.jpg",
+        "imdbrating": 5.5,
+        "top250tv": 0,
+        "synopsis": "Will Ferrell stars as a Spanish-speaking cowboy in this comedy about a Mexican clan trying to rescue their ranch from greedy creditors.",
+        "titledate": "2015-04-14",
+        "avgrating": 2.9026911,
+        "year": 2012,
+        "runtime": 5055,
+        "top250": 0,
+        "id": 26990
+      },
+      {
+        "vtype": "series",
+        "img": "https://occ-0-1926-41.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABV9roMZiyg4EgSx12UtfniRbGMABBi62eL_oEKAuZFaKQvBRlpm0wYYeQHRuo0CScp87lEyjBZrvbffgjFF_kAc9I9XvM9vmtF3yYMZ8HjfXouaWMt1bzWtSh3M.jpg?r=fb5",
+        "nfid": 80192098,
+        "imdbid": "tt6468322",
+        "title": "La casa de papel",
+        "clist": "\"CA\":\"Canada\",\"FR\":\"France\",\"DE\":\"Germany\",\"NL\":\"Netherlands\",\"PL\":\"Poland\",\"GB\":\"United Kingdom\",\"US\":\"United States\",\"AR\":\"Argentina\",\"AU\":\"Australia\",\"BE\":\"Belgium\",\"more\":\"+24\"",
+        "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzBlY2QzNzYtMWU1NS00NjFkLWJiMzItYmM3YTc4MDFjNDQwXkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg",
+        "imdbrating": 8.5,
+        "top250tv": 244,
+        "synopsis": "Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal mastermind manipulates the police to carry out his plan.",
+        "titledate": "2017-07-02",
+        "avgrating": 0,
+        "year": 2017,
+        "runtime": 0,
+        "top250": 0,
+        "id": 54037
+      },
+      {
+        "vtype": "series",
+        "img": "https://occ-0-2717-360.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABb1E-8Nj_n8a09hW5IObTt5Y58OSRTFHbs9sh1EdjCB2VoEcpbiYcRolVlCqy-sU3zljVE71fKGk-3mTcdoUIdjDKA.jpg?r=06f",
+        "nfid": 81037237,
+        "imdbid": "tt7183310",
+        "title": "Heidi, bienvenida a casa",
+        "clist": "\"CA\":\"Canada\",\"GB\":\"United Kingdom\",\"US\":\"United States\",\"AR\":\"Argentina\",\"BR\":\"Brazil\",\"IT\":\"Italy\",\"MX\":\"Mexico\",\"PT\":\"Portugal\",\"ES\":\"Spain\"",
+        "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BYWYxZDU5MTEtYzM2NC00ZTVmLThlNWMtMDlhMDRlMDQ5ZGY0XkEyXkFqcGdeQXVyNzgwNDE4ODM@._V1_SX300.jpg",
+        "imdbrating": 0,
+        "top250tv": 0,
+        "synopsis": "Inspired by the classic novel, this telenovela follows Heidi, who leaves her happy life in the mountains behind when her aunt takes her to the big city.",
+        "titledate": "2019-05-15",
+        "avgrating": 0,
+        "year": 2017,
+        "runtime": 0,
+        "top250": 0,
+        "id": 62070
+      }
+    ]
+  }

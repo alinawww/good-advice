@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Select the genres</h1>
+<mat-form-field appearance="outline" class="search__form-text">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput [(ngModel)]="genreFilter"  (keydown)="onKeydown($event)">
+</mat-form-field>
+<mat-chip-list aria-label="Genre selection" [selectable]="false">
+    <mat-chip *ngFor="let item of selection" color="primary" [removable]="true">
+        {{item.genre}}
+        <mat-icon matChipRemove (click)="removeGenre(item)">cancel</mat-icon>
+    </mat-chip>
+</mat-chip-list>
+<div mat-dialog-content>
+    <div class="genres-container">
+        <mat-checkbox *ngFor="let genre of displayedGenres" [value]="genre" (change)="selectGenre($event)"
+            [checked]="selection && selection.indexOf(genre) > -1">{{genre.genre}}</mat-checkbox>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close()" >No Thanks</button>
+    <button mat-button [mat-dialog-close]="selection" cdkFocusInitial>Ok</button>
+</div>

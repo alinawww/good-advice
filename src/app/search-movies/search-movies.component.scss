@@ -1,0 +1,132 @@
+@import 'src/palette';
+:host {
+    display: block;
+    position: relative;
+}
+
+.container-flex {
+    display: flex;
+    &__col  {
+        flex: 0 0 50%;
+    }
+}
+.section {
+    margin: 50px 0;
+}
+.recommendations {
+    margin: 32px;
+}
+
+.search {
+    padding: 40px;
+    width: 100%;
+    &__form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        &-select {
+            // max-width: 140px;
+        }
+        .mat-form-field {
+            width: 100%;
+            margin-right: 10px;
+            .mat-icon {
+                padding-right: 20px;
+            }
+            ::ng-deep {
+                .mat-form-field-wrapper, .mat-form-field-appearance-outline {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.tab-content {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    margin-top: 40px;
+    display: flex;
+}
+
+.film-card {
+    height: 100%;
+    background: transparentize(white, .6);
+    border-radius: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+
+    transition: background ease-in-out 200ms;
+    &__cover {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__details {
+        padding: 20px;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &.selected {
+        background: pink;
+    }
+    &:hover {
+        background: white;
+
+        cursor: pointer;
+    }
+}
+
+.genres-list {
+    max-height: 250px;
+    overflow: scroll;
+    margin: 30px 0;
+
+    button {
+        margin: 2px;
+    }
+}
+
+
+.genres-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.filters {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    &__item {
+        padding: 16px 0;
+        margin: 4px 0;
+        border-radius: 10px;
+    }
+}
+.results {
+    margin: 24px 0 0 24px;
+    border-radius: 10px;
+    flex-grow: 1;
+    background: #e4e8ff;
+    &__empty {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        align-items: center;
+    }
+    &__empty-illustration {
+        width: 140px;
+        margin: 0 auto;
+    }
+}

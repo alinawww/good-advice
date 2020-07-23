@@ -8,19 +8,33 @@ import { RandomAdviceComponent } from './random-advice/random-advice.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { SearchMoviesComponent } from './search-movies/search-movies.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { GenresSelectionComponent } from './search-movies/genres-selection/genres-selection.component';
+import {NouisliderModule} from 'ng2-nouislider';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RandomAdviceComponent,
-    SearchMoviesComponent
+    SearchMoviesComponent,
+    GenresSelectionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NouisliderModule
+  ],
+  entryComponents: [
+    GenresSelectionComponent
+  ],
+  exports: [
+    NouisliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

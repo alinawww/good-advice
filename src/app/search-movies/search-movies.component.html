@@ -1,3 +1,97 @@
-<p>
-  search-movies works!
-</p>
+<div class="page container-flex">
+  <div class="search" *ngIf="form">
+    <form autocomplete="off" [formGroup]="form">
+      <div class="search__form">
+        <mat-form-field appearance="outline" class="search__form-select">
+          <mat-label>All</mat-label>
+          <mat-select formControlName="type">
+            <mat-option>Movies & series</mat-option>
+            <mat-option value="movie">Movie</mat-option>
+            <mat-option value="series">Series</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="search__form-text">
+          <mat-icon color="primary" matPrefix>search</mat-icon>
+          <mat-label>&nbsp;Search</mat-label>
+          <input matInput (keydown)="onKeydown($event)" formControlName="query">
+        </mat-form-field>
+        <button mat-flat-button color="primary">Go</button>
+      </div>
+      <div class="section">
+        <mat-tab-group mat-stretch-tabs>
+          <mat-tab label="Search mode">
+            <div class="tab-content">
+              <div class="filters">
+                <div class="filters__item">
+                  <button mat-flat-button color="primary" (click)="openDialog($event)">Select genres</button>
+                </div>
+                <div class="filters__item">
+                  <p>Rating between: {{form.controls.start_rating.value}} - {{form.controls.end_rating.value}}</p>
+                  <nouislider [connect]="true" [(ngModel)]="ranges.rating" (ngModelChange)="onChangeRange('rating', $event)" [ngModelOptions]="{standalone: true}"
+                  [min]="1" [max]="10" [step]="1"></nouislider>
+                </div>
+                <div class="filters__item">
+                  <p>Released between: {{form.controls.start_year.value}} - {{form.controls.end_year.value}}</p>
+                  <nouislider [connect]="true" [(ngModel)]="ranges.year" (ngModelChange)="onChangeRange('year', $event)" [ngModelOptions]="{standalone: true}"
+                    [min]="1900" [max]="2020" [step]="1"></nouislider>
+                </div>
+              
+                <div class="filters__item">
+                  <mat-form-field appearance="outline" class="search__form-select">
+                    <mat-label>Order by</mat-label>
+                    <mat-select formControlName="orderby">
+                      <mat-option>None</mat-option>
+                      <mat-option value="date">Date</mat-option>
+                      <mat-option value="rating">Rating</mat-option>
+                      <mat-option value="title">Title</mat-option>
+                      <mat-option value="type">Type</mat-option>
+                      <mat-option value="runtime">Runtime</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <button (click)="onSubmit()" [disabled]="!form.valid" mat-flat-button color="primary"
+                tabindex="0">Search</button>
+              </div>
+              <div class="results">
+                <mat-chip-list aria-label="Genre selection" [selectable]="false">
+                  <mat-chip *ngFor="let item of selectedGenres" color="primary" [removable]="true">
+                    {{item.genre}}
+                    <mat-icon matChipRemove (click)="removeGenre(item)">cancel</mat-icon>
+                  </mat-chip>
+                </mat-chip-list>
+
+                <div *ngIf="loading">
+                  <mat-progress-spinner color="primary" mode="indeterminate">
+                  </mat-progress-spinner>
+                </div>
+                <ng-container *ngIf="!loading" >
+                  <div class="search__results row">
+                    <div class="col" *ngFor="let result of results">
+                      <div class="film-card" [class.selected]="selectedItems.includes(result.nfid)" (click)="toggleItemSelection(result.nfid)">
+                        <div class="film-card__details">
+                          <h3 class="film-card__title">{{result.title}} ({{result.year}})</h3>
+                          <p class="film-card__synopsis">{{result.synopsis}}</p>
+                          <p class="film-card__synopsis">IMDB rating: {{result.imdbrating}}</p>
+                          <p class="film-card__type">Type: {{result.vtype}}</p>
+                        </div>
+                        <div class="film-card__cover" [style]="'background-image: url(' + result.img + ')'"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="results__empty" *ngIf="!results || !results.length">
+                    <img class="results__empty-illustration" src="/assets/images/cinema.svg" alt="">
+                  </div>
+                </ng-container>
+                <br>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Explore mode">
+            Content 2
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </form>
+  </div>
+</div>

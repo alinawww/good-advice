@@ -1,3 +1,67 @@
+@import './palette';
+@import "~nouislider/distribute/nouislider.min.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    // background: $bla ck;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    // padding: 10px;
+}
+
+.col {
+    flex-basis: 200px;
+    flex-grow: 1;
+    margin: 20px;
+}
+
+
+//noui overrides
+
+.noUi-target {
+
+    box-shadow: none;
+    background: #bdbdbd;
+    border: 0;
+}
+
+.noUi-horizontal {
+    height: 2px;
+    .noUi-handle {
+        width: 14px;
+        height: 14px;
+        right: -7px;
+        top: -7px;
+        &:focus {
+            width: 18px;
+            height: 18px;
+            right: -9px;
+            top: -9px;
+            outline: none;
+        }
+    }
+}
+.noUi-handle {
+    border: none;
+    border-radius: 10px;
+    background: #ff4081;
+    cursor: grab;
+    box-shadow: none;
+    &:before, &:after {
+        display: none;
+    }
+}
+
+.noUi-connect {
+    background: #ff4081;
+}
