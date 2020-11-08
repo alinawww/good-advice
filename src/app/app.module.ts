@@ -11,6 +11,7 @@ import { SearchMoviesComponent } from './search-movies/search-movies.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { GenresSelectionComponent } from './search-movies/genres-selection/genres-selection.component';
 import {NouisliderModule} from 'ng2-nouislider';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import {NouisliderModule} from 'ng2-nouislider';
   exports: [
     NouisliderModule,
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

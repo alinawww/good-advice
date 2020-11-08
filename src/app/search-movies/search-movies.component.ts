@@ -8,7 +8,6 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatDialog } from '@angular/material/dialog';
 import { GenresSelectionComponent } from './genres-selection/genres-selection.component';
 import { sortBy } from 'lodash';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 interface Genre {
   genre: string;

@@ -3,6 +3,9 @@
     display: block;
     position: relative;
 }
+.page {
+    background: url('/assets/images/wave.svg') no-repeat top;
+}
 
 .container-flex {
     display: flex;
@@ -123,10 +126,18 @@
         display: flex;
         align-items: center;
         height: 100%;
-        align-items: center;
     }
     &__empty-illustration {
         width: 140px;
         margin: 0 auto;
     }
+}
+
+.loading-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.loading-spinner {
+    margin: auto;
 }

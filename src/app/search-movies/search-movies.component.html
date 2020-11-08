@@ -3,9 +3,9 @@
     <form autocomplete="off" [formGroup]="form">
       <div class="search__form">
         <mat-form-field appearance="outline" class="search__form-select">
-          <mat-label>All</mat-label>
+          <mat-label>Type</mat-label>
           <mat-select formControlName="type">
-            <mat-option>Movies & series</mat-option>
+            <mat-option value="">Movies & series</mat-option>
             <mat-option value="movie">Movie</mat-option>
             <mat-option value="series">Series</mat-option>
           </mat-select>
@@ -61,8 +61,8 @@
                   </mat-chip>
                 </mat-chip-list>
 
-                <div *ngIf="loading">
-                  <mat-progress-spinner color="primary" mode="indeterminate">
+                <div *ngIf="loading" class="loading-wrapper">
+                  <mat-progress-spinner class="loading-spinner" color="primary" mode="indeterminate">
                   </mat-progress-spinner>
                 </div>
                 <ng-container *ngIf="!loading" >
