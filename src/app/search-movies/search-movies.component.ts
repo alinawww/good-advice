@@ -6,8 +6,8 @@ import { takeUntil, finalize } from 'rxjs/operators';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatDialog } from '@angular/material/dialog';
-import { GenresSelectionComponent } from './genres-selection/genres-selection.component';
 import { sortBy } from 'lodash';
+import { GenresSelectionComponent } from './genres-selection/genres-selection.component';
 
 interface Genre {
   genre: string;
@@ -27,6 +27,13 @@ export class SearchMoviesComponent implements OnInit {
   results = [];
   filmList = [];
   genres = [];
+  sortOptions = [
+    "date",
+    "rating",
+    "title",
+    "type",
+    "runtime"
+  ];
   selectedGenres = [];
   filteredGenres: Observable<Genre[]>;
   filterModel: any = {};
@@ -45,7 +52,7 @@ export class SearchMoviesComponent implements OnInit {
   };
 
   selectedItems = [];
-  constructor(private apiService: ApiService, private _fb: FormBuilder, public dialog: MatDialog) {}
+  constructor(private apiService: ApiService, private _fb: FormBuilder, public dialog: MatDialog) { }
 
   removeGenre(genre) {
     this.selectedGenres.splice(this.selectedGenres.indexOf(genre), 1);
@@ -75,7 +82,7 @@ export class SearchMoviesComponent implements OnInit {
       genrelist: new FormControl([]),
       query: new FormControl(''),
       type: new FormControl(''),
-      orderby: new FormControl(''),
+      orderby: new FormControl(this.sortOptions[0]),
       countrylist: this._fb.array([]),
       // range_year: new FormControl([1940, 2020]),
       start_year: new FormControl(1940),
@@ -129,12 +136,12 @@ export class SearchMoviesComponent implements OnInit {
 
   search() {
     this.loading = true;
-    const config: any = {...this.form.value };
+    const config: any = { ...this.form.value };
     this.apiService.searchNf({ ...config })
       .pipe(takeUntil(this.destroySubject), finalize(() => this.loading = false))
       .subscribe(res => {
-      this.results = res.results;
-    });
+        this.results = res.results;
+      });
   }
   filterGenres(ev) {
     return this.genres.filter(genre => genre.genre.includes(ev.target.value));
@@ -186,7 +193,7 @@ export class SearchMoviesComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-       this.search();
+      this.search();
     }
   }
 
